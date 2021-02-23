@@ -1,0 +1,35 @@
+{
+  "name": "use-previous",
+  "version": "1.0.0",
+  "description": "React hook for getting previuos value",
+  "type": "commonjs",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "scripts": {
+    "clean": "shx rm -rf dist/*",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "mocha --ui qunit",
+    "testall": "mocha --ui qunit dist/test",
+    "prepack": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "react",
+    "hook",
+    "use",
+    "previous",
+    "value"
+  ],
+  "author": "Taras Alekhin",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.8.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^8.2.1",
+    "@types/node": "^14.14.31",
+    "@types/react": "^16.8.0",
+    "mocha": "^8.3.0",
+    "shx": "^0.3.3"
+  }
+}
