@@ -1,7 +1,7 @@
-import { strict as assert } from 'assert';
-import { render } from "@testing-library/react";
+import { render, act } from "@testing-library/react";
 import { usePrevious } from '../src/index';
 import React, { useState } from 'react';
+
 
 function setup() {
   const outherValues: {
@@ -23,7 +23,7 @@ function setup() {
     return null
   }
 
-  render(<Counter />)
+  act(() => {render(<Counter />)});
 
   return outherValues;
 }
@@ -31,11 +31,11 @@ function setup() {
 test('usePrevious hook', () => {
   const s = setup();
 
-  assert.equal(s.returnVal, undefined);
-  s.up();
-  assert.equal(s.returnVal, 0);
-  s.up();
-  assert.equal(s.returnVal, 1);
-  s.down();
-  assert.equal(s.returnVal, 2);
+  expect(s.returnVal).toBe(undefined);
+  act(s.up);
+  expect(s.returnVal).toBe(0);
+  act(s.up);
+  expect(s.returnVal).toBe(1);
+  act(s.down);
+  expect(s.returnVal).toBe(2);
 });

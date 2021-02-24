@@ -13,6 +13,6 @@
     "declaration": true,
     "sourceMap": true,
     "jsx": "react",
-    "types": ["mocha", "node"]
+    "types": ["jest", "node"]
   }
 }
